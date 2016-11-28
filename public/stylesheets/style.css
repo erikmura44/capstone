@@ -1,0 +1,40 @@
+.black {
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+.blue {
+   background-color: #2248ba;
+   color: white;
+   text-align: center;
+}
+.white {
+   background-color: white;
+   color: black;
+   text-align: center;
+}
+.red {
+   background-color: red;
+   color: black;
+   text-align: center;
+}
+th {
+   text-align: center;
+}
+input {
+   display: block !important;
+   padding: 0 !important;
+   margin: 0 !important;
+   border: 0 !important;
+   width: 100% !important;
+   border-radius: 0 !important;
+   line-height: 1 !important;
+   text-align: center;
+}
+td {
+   margin: 0 !important;
+   padding: 0 !important;
+}
+.frontnine {
+   color: black;
+}
