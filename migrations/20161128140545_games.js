@@ -12,7 +12,6 @@ exports.up = function(knex, Promise) {
     table.integer('score7');
     table.integer('score8');
     table.integer('score9');
-    table.integer('front9score');
     table.integer('score10');
     table.integer('score11');
     table.integer('score12');
@@ -22,8 +21,6 @@ exports.up = function(knex, Promise) {
     table.integer('score16');
     table.integer('score17');
     table.integer('score18');
-    table.integer('back9score');
-    table.integer('totalScore');
   })
 };
 

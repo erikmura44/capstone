@@ -11,7 +11,6 @@ exports.up = function(knex, Promise) {
     table.integer('hole7');
     table.integer('hole8');
     table.integer('hole9');
-    table.integer('front9yards');
     table.integer('hole10');
     table.integer('hole11');
     table.integer('hole12');
@@ -21,8 +20,6 @@ exports.up = function(knex, Promise) {
     table.integer('hole16');
     table.integer('hole17');
     table.integer('hole18');
-    table.integer('back9yards');
-    table.integer('totalRedYards');
   })
 };
 
