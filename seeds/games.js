@@ -17,7 +17,6 @@ exports.seed = function(knex, Promise) {
            score7: 4,
            score8: 6,
            score9: 3,
-           front9score: 37,
            score10: 4,
            score11: 5,
            score12: 4,
@@ -27,8 +26,6 @@ exports.seed = function(knex, Promise) {
            score16: 3,
            score17: 4,
            score18: 4,
-           back9score: 36,
-           totalScore: 73
         }),
       ]);
     });
