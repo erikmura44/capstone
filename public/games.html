@@ -1,0 +1,105 @@
+<div class="container">
+   <div class="row">
+      <div class="col-md-12">
+         <div class="row">
+            <div class="col-md-4">
+               <div class="card">
+                 <div class="card-block" >
+                   <h4 class="card-title">Bingo, Bango, Bongo</h4>
+                   <p class="card-text">Bingo bango bongo is a golf betting game whereby a point is awarded on each hole for each individual element of the bingo bango bongo. So three separate points are awarded on each hole.
+                   </p>
+                   <ul ng-show="showBBB">
+                      <li>A bingo is awarded to the player who first gets their ball onto the green.</li>
+                      <li>The player whose ball is closest to the pin after each player has played their ball onto the green wins the bango for that hole.</li>
+                      <li>A bongo goes to the player who first holes out.</li>
+                     <li>Some variations award double points on a hole if a player achieves all three parts of the bingo bango bongo.</li>
+                   </ul>
+                   <button ng-click="ShowHideBBB()">Rules</button>
+                 </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="card">
+                  <div class="card">
+                   <div class="card-block">
+                     <h4 class="card-title">4-Ball</h4>
+                     <p class="card-text">Four-ball is one of the most popular formats for team competitions. This is the chosen format for some of the biggest team tournaments in golf, including the Ryder Cup, Seve Trophy, Presidents Cup and Solheim Cup competitions. Four-ball match play is defined as a match in which two players play their better ball against the better ball of two other players. For this reason, you will also hear the format referred to as “better ball.” While the concept is simple, success at four-ball is a classic example of using strategy to make the team score better than either player could do on their own.
+                     <ul ng-show="show4ball">
+                        <li>Four players create two teams of two, and each player plays their own ball</li>
+                        <li>After each hole, each teams’ players compare their scores, and the lowest score is counted as the team score.</li>
+                        <li>For example, in a stroke play format, if one team’s players were playing a par-4 hole and Player A took four shots while Player B took five shots, then the team’s score would be 4 since it was the better of the two scores.</li>
+                       <li>In match play, the team’s score of 4 would be compared against the other team’s best score to determine which team won the hole.</li>
+                     </ul>
+                     <button ng-click="ShowHide4ball()">Rules</button>
+                   </div>
+                 </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="card">
+                 <div class="card-block">
+                   <h4 class="card-title">Four Man Best Ball</h4>
+                   <p class="card-text">Four-player best ball is a variety of golf in which all four players in a group are working together to achieve the best possible score. Since only the best individual score counts for each hole, a squad has the ability to shoot a much lower round than they would on their own.
+                   </p>
+                   <ul ng-show="show4manBB">
+                      <li>Each player tees off and plays the hole in the order of the team’s choosing, with each player completing the hole with their own ball.</li>
+                      <li>At the end of the hole, only the best score handed in by any player on the hole is counted as the team’s score.</li>
+                      <li>If, for example, Team A plays a hole and the players shoot 3, 5, 5 and 6, respectively, and Team B has all four players with a score of 4, Team A would have the better score for the hole, 3 to Team B’s 4, even though A had 19 total strokes to B’s 16.</li>
+                   </ul>
+                   <button ng-click="ShowHide4manBB()">Rules</button>
+                 </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="card">
+                 <div class="card-block">
+                   <h4 class="card-title">Match Play</h4>
+                   <p class="card-text">In match play golf, each hole is like its own small competition, equal to every other hole, making the magnitude of victory irrelevant. Matches are scored by winning a hole, not by cumulative strokes. If a player wins the first hole by three strokes, then loses the second and third holes by one stroke each, they are behind in the match, despite their stroke lead. This scoring rewards risky play. For example, a shot over a water hazard in stroke play is risking a two-stroke penalty for the chance to shoot one stroke lower, while in match play, you are risking losing a hole for a chance to win a hole, making for a more balanced risk-reward scenario.
+                   </p>
+                   <ul ng-show="showMP">
+                      <li>Scores for strokes in a hole during match play are scored the same as in a round of stroke play, meaning a ball lost in a hazard costs a player the same number of strokes on their score for the hole in both formats.</li>
+                      <li>While players are essentially accumulating points, with one point for winning a hole and 1/2 each for a tie, scoring is not looked at as a total of, for example, 3 to 1</li>
+                      <li>A unique aspect of match play is the concession. One player can concede another’s putt; the second player would record the number of strokes actually taken plus the conceded stroke.</li>
+                   </ul>
+                   <button ng-click="ShowHideMP()">Rules</button>
+                 </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="card">
+                 <div class="card-block">
+                   <h4 class="card-title">Skins</h4>
+                   <p class="card-text">The skins game format in golf has long been a staple of friendly competitions among amateurs, but it reached national prominence in 1983 when a skins game was televised with four legends competing: Arnold Palmer, Gary Player, Jack Nicklaus and Tom Watson. The match was played over Thanksgiving weekend on the rugged and difficult Desert Highlands course in Scottsdale, Arizona. Viewers got to experience all the drama and excitement of the skins format—how the stakes can rise as the match progresses and a player who has been struggling all day can rise up and win by having a great hole or series of holes at the end.
+                   </p>
+                   <ul ng-show="showSkins">
+                      <li>Assign a skin value to each of the holes.</li>
+                      <li>Ask each player to contribute a set amount of money for each hole if the value of the skin is going to be the same for each hole. Or divide the total number of points by four and ask each player to contribute that dollar amount of money for the pot.</li>
+                      <li>The player with the lowest score on the first hole wins the skin for that hole. If there is no lowest player because two or more golfers tied for the lowest score on the hole, the skin is rolled over to the next hole.</li>
+                      <li>Handicap indexes are not considered in skins.</li>
+                      <li>Total the number of skins, if the value of each hole is the same, or total up the number of points. The winner is the player with the most skins or points</li>
+                   </ul>
+                   <button ng-click="ShowSkins()">Rules</button>
+                 </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="card">
+                 <div class="card-block">
+                   <h4 class="card-title">Scramble</h4>
+                   <p class="card-text">A golf scramble is a format for golf tournaments where two or more players form a team to play, with the rules emphasizing fun without the pressure of players keeping individual scores. Each player hits a tee shot on each hole, but everyone plays from the spot of the best shot, subject to certain criteria. Rules for playing in a scramble are informal, with tournament organizers modifying basic rules as they wish. For example, organizers may require a group to select each player’s tee shot at least twice. The scramble format is not covered under the official Rules of Golf.
+                   </p>
+                   <ul ng-show="showScramble">
+                      <li>Each member of the team tees off from the starting hole. In a scramble tournament, the team’s opening hole could be any hole on an 18-hole course, depending on the assignment by tournament organizers. Players can tee off with the golf club of their choosing—not necessarily a driver.</li>
+                      <li>The best tee shot is chosen through general consensus of the scramble team. The group can decide the best tee shot based on any criteria they choose. Usually, the best shot is the longest drive that lands in the fairway, though the team may choose a long tee shot that landed off the fairway in the rough if there is a decent lie.</li>
+                      <li>The spot of the best tee shot is marked with a golf tee or ball marker. Players must pick up their golf balls and hit from within one club length of the newly marked spot.</li>
+                      <li>Team members continue selecting the best shot until one player hits the ball in the hole. The team score is the total of the best shots.</li>
+                   </ul>
+                   <button ng-click="ShowScramble()">Rules</button>
+                 </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+</div>

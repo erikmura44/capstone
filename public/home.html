@@ -1,5 +1,19 @@
+<input ng-model="course_id">
+<button ng-click="getTees()">Load Course</button>
 
-  <input ng-model="course_id">
-  <button ng-click="getTees()">Load Course</button>
-  
-  <score-card tees="courses"></score-card>
+<div class="container">
+   <div class="row">
+      <div class="col-md-12 scorecard">
+         <score-card ng-if="pars" tees="courses" scores="scores" pars="pars"></score-card>
+         <button ng-click="submitScores()">Submit Score</button>
+      </div>
+   </div>
+</div>
+
+<!--
+
+
+<input type="button" value="Show Hide DIV" ng-click="ShowHide()" />
+      <br />
+      <br />
+<div ng-show = "IsVisible">My DIV</div> -->

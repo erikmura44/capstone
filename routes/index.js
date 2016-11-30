@@ -9,7 +9,8 @@ router.get('/:course_id', function(req, res, next) {
          queries.getBlackTees(req.params.course_id),
          queries.getBlueTees(req.params.course_id),
          queries.getWhiteTees(req.params.course_id),
-         queries.getRedTees(req.params.course_id)
+         queries.getRedTees(req.params.course_id),
+         queries.getPar(req.params.course_id)
       ]
    )
    .then(function(data){
@@ -27,6 +28,14 @@ router.get('/', function(req, res, next){
       ]
    )
 })
+
+router.post('/postscores', function(req, res, next){
+   queries.sendScoresToDB(req.body)
+   .then(function(games){
+      res.send(200)
+   })
+})
+
 
 
 module.exports = router;

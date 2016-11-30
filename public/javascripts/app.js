@@ -4,8 +4,17 @@ angular.module('golfapp', ['ngRoute'])
     .when('/', {
       templateUrl: '/home.html',
       controller: 'controller'
-    })
+   })
+    .when('/games', {
+      templateUrl: '/games.html',
+      controller: 'controller'
+   })
+    .when('/handicap', {
+      templateUrl: '/handicap.html',
+      controller: 'controller'
+   })
     .otherwise({
       redirectTo: '/'
     })
+    $locationProvider.html5Mode(true);
 })

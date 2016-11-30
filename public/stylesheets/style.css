@@ -29,3 +29,16 @@ td {
 .frontnine {
    color: black;
 }
+input {
+   width: 20px !important;
+}
+.scorecard {
+   border: 2px solid red;
+   border-radius: 5px;
+}
+.card-title {
+   text-align: center;
+}
+btn-primary {
+   text-align: center;
+}

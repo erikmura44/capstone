@@ -28,11 +28,22 @@ function getRedTees (course_id) {
       return data
    })
 }
+function getPar (id) {
+   return knex('courses').first().where("id", id).then(function(data){
+      return data
+   })
+}
+
+function sendScoresToDB (game){
+   return knex('games').insert(game)
+}
 
 module.exports = {
   getPlayer: getPlayer,
   getBlackTees: getBlackTees,
   getBlueTees: getBlueTees,
   getWhiteTees: getWhiteTees,
-  getRedTees: getRedTees
+  getRedTees: getRedTees,
+  getPar: getPar,
+  sendScoresToDB: sendScoresToDB
 }
