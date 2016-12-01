@@ -1,19 +1,13 @@
-<input ng-model="course_id">
+<h1 class="title">Bogie Man</h1>
+
+<input ng-model="course_id" class="courseInput"><br>
 <button ng-click="getTees()">Load Course</button>
 
 <div class="container">
    <div class="row">
-      <div class="col-md-12 scorecard">
+      <div ng-if="pars" class="col-md-12 scorecard">
          <score-card ng-if="pars" tees="courses" scores="scores" pars="pars"></score-card>
-         <button ng-click="submitScores()">Submit Score</button>
+         <button ng-if="pars" ng-click="submitScores()">Submit Score</button>
       </div>
    </div>
 </div>
-
-<!--
-
-
-<input type="button" value="Show Hide DIV" ng-click="ShowHide()" />
-      <br />
-      <br />
-<div ng-show = "IsVisible">My DIV</div> -->

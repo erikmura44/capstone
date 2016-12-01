@@ -26,85 +26,104 @@ app.controller('controller', function($scope, $http, $location) {
        $scope.showScramble = $scope.showScramble ? false : true;
    }
 
- $scope.getTees = function(){
-      $http.get("/api/" + $scope.course_id)
-      .then(function (data){
-         // $scope.playerName = data.data[0].name
-         $scope.courses = data.data.slice(0,4)
-         $scope.pars = data.data[4]
-         $scope.scores = {}
-      })
-      .catch(function(){
-         $scope.courses = []
-      })
+
+$scope.getTees = function(){
+   $http.get("/api/" + $scope.course_id)
+   .then(function (data){
+      $scope.courses = data.data.slice(0,4)
+      $scope.pars = data.data[4]
+      $scope.scores = {}
+   })
+   .catch(function(){
+      $scope.courses = []
+   })
+}
+$scope.submitScores = function(){
+   $http.post('/api/postscores', Object.assign({}, {course_id:$scope.course_id}, $scope.scores))
+   $scope.submitScores = $scope.submitScores ? false : true;
    }
-   $scope.submitScores = function(){
-      $http.post('/api/postscores', Object.assign({}, {course_id:$scope.course_id}, $scope.scores))
-   }
+
 });
 
+app.controller('handicapController', function($scope, $http, $location){
+   $http.get('/api/handicap')
+   .then(function(data){
+     console.log(data)
+     $scope.handicap = data.data
+   })
+   $scope.totalScore = function(x){
+      return x.score1 + x.score2 + x.score3 + x.score4 + x.score5 + x.score6 + x.score7 + x.score8 + x.score9 + x.score10 + x.score11 + x.score12 + x.score13 + x.score14 + x.score15 + x.score16 + x.score17 + x.score18
+   }
+
+   $http.get('/api/gameData')
+   .then(function(data){
+     console.log(data)
+     $scope.gameData = data.data
+   })
+})
+
 app.directive("scoreCardTee", function () {
-  return {
-    templateUrl: "scorecard-tee.html",
-    scope: { tee: "=" },
-    controller: function($scope){
-      var tee = $scope.tee
-      $scope.front9 = function(){
-         return tee.hole1 + tee.hole2 + tee.hole3 + tee.hole4 + tee.hole5 + tee.hole6 + tee.hole7 + tee.hole8 + tee.hole9
-      }
-      $scope.back9 = function(){
-         return tee.hole10 + tee.hole11 + tee.hole12 + tee.hole13 + tee.hole14 + tee.hole15 + tee.hole16 + tee.hole17 + tee.hole18
-      }
-      $scope.totalYards = function(){
-         return $scope.front9() + $scope.back9()
-      }
-   },
-    restrict: "A"
-  }
+   return {
+      templateUrl: "scorecard-tee.html",
+      scope: { tee: "=" },
+      controller: function($scope){
+         var tee = $scope.tee
+         $scope.front9 = function(){
+            return tee.hole1 + tee.hole2 + tee.hole3 + tee.hole4 + tee.hole5 + tee.hole6 + tee.hole7 + tee.hole8 + tee.hole9
+         }
+         $scope.back9 = function(){
+            return tee.hole10 + tee.hole11 + tee.hole12 + tee.hole13 + tee.hole14 + tee.hole15 + tee.hole16 + tee.hole17 + tee.hole18
+         }
+         $scope.totalYards = function(){
+            return $scope.front9() + $scope.back9()
+         }
+      },
+      restrict: "A"
+   }
 })
 
 app.directive("scoreCardPar", function () {
-  return {
-    templateUrl: "scorecard-par.html",
-    scope: { pars: "=" },
-    controller: function($scope){
-      var par = $scope.pars
-      $scope.front9 = function(){
-         return par.par1 + par.par2 + par.par3 + par.par4 + par.par5 + par.par6 + par.par7 + par.par8 + par.par9
-      }
-      $scope.back9 = function(){
-         return par.par10 + par.par11 + par.par12 + par.par13 + par.par14 + par.par15 + par.par16 + par.par17 + par.par18
-      }
-      $scope.totalPar = function(){
-         return $scope.front9() + $scope.back9()
-      }
-   },
-    restrict: "A"
-  }
+   return {
+      templateUrl: "scorecard-par.html",
+      scope: { pars: "=" },
+      controller: function($scope){
+         var par = $scope.pars
+         $scope.front9 = function(){
+            return par.par1 + par.par2 + par.par3 + par.par4 + par.par5 + par.par6 + par.par7 + par.par8 + par.par9
+         }
+         $scope.back9 = function(){
+            return par.par10 + par.par11 + par.par12 + par.par13 + par.par14 + par.par15 + par.par16 + par.par17 + par.par18
+         }
+         $scope.totalPar = function(){
+            return $scope.front9() + $scope.back9()
+         }
+      },
+      restrict: "A"
+   }
 })
 
 app.directive("scoreCard", function () {
-  return {
-    templateUrl: "scorecard.html",
-    scope: {
-      tees: "=",
-      pars: "=",
-      scores: "="
-   },
-    restrict: "E"
-  }
+   return {
+      templateUrl: "scorecard.html",
+      scope: {
+         tees: "=",
+         pars: "=",
+         scores: "="
+      },
+      restrict: "E"
+   }
 })
 
 
 app.directive("playerScore", function () {
-  return {
-    templateUrl: "playerScore.html",
-    scope: { scores: "=" },
-    controller: function($scope){
-      var scores = $scope.scores
-      $scope.front9scores = function() {
-             var front9score = parseFloat(scores.score1 || 0) + parseFloat(scores.score2 || 0) +
-                          parseFloat(scores.score3 || 0) + parseFloat(scores.score4 || 0) +
+   return {
+      templateUrl: "playerScore.html",
+      scope: { scores: "=" },
+      controller: function($scope){
+         var scores = $scope.scores
+         $scope.front9scores = function() {
+            var front9score = parseFloat(scores.score1 || 0) + parseFloat(scores.score2 || 0) +
+                      parseFloat(scores.score3 || 0) + parseFloat(scores.score4 || 0) +
                           parseFloat(scores.score5 || 0) + parseFloat(scores.score6 || 0) + parseFloat(scores.score7 || 0) + parseFloat(scores.score8 || 0) + parseFloat(scores.score9 || 0);
              return front9score || 0;
           };

@@ -30,7 +30,7 @@ td {
    color: black;
 }
 input {
-   width: 20px !important;
+   width: 20px;
 }
 .scorecard {
    border: 2px solid red;
@@ -41,4 +41,20 @@ input {
 }
 btn-primary {
    text-align: center;
+}
+.navbar-default {
+   background-color: white;
+   border: none;
+   height: 75px;
+}
+@media (min-width: 768px) {
+   .navbar-nav>li>a {
+   padding-top: 30px;
+   }
+}
+.title {
+   text-align: center;
+}
+.courseInput {
+   width: 100px;
 }
