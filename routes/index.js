@@ -3,6 +3,30 @@ var router = express.Router();
 var queries = require('../database/queries.js');
 
 /* GET home page. */
+
+router.get('/gameData', function(req, res, next){
+   Promise.all(
+      [
+         queries.gameData()
+      ]
+   )
+   .then(function(data){
+      res.json(data)
+   })
+})
+router.get('/handicap', function(req, res, next){
+   Promise.all(
+      [
+         queries.handicap()
+      ]
+   )
+   .then(function(data){
+      res.json(data)
+   })
+   .catch(function(error){
+   })
+})
+
 router.get('/:course_id', function(req, res, next) {
    Promise.all(
       [
@@ -35,6 +59,8 @@ router.post('/postscores', function(req, res, next){
       res.send(200)
    })
 })
+
+
 
 
 
