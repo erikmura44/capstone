@@ -56,7 +56,7 @@ router.get('/', function(req, res, next){
 router.post('/postscores', function(req, res, next){
    queries.sendScoresToDB(req.body)
    .then(function(games){
-      res.send(200)
+      res.sendStatus(200)
    })
 })
 

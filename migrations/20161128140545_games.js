@@ -2,7 +2,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('games', function(table){
     table.increments();
     table.integer('course_id');
-    table.timestamp('date').defaultTo(knex.fn.now());
+    table.date('date').defaultTo(knex.fn.now());
     table.integer('score1');
     table.integer('score2');
     table.integer('score3');
