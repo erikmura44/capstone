@@ -21,6 +21,7 @@ exports.up = function(knex, Promise) {
     table.integer('score16');
     table.integer('score17');
     table.integer('score18');
+    table.integer('handicap')
   })
 };
 
