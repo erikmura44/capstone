@@ -1,13 +1,13 @@
-<h1 class="title">Bogie Man</h1>
-
 <input ng-model="course_id" class="courseInput"><br>
 <button ng-click="getTees()">Load Course</button>
+
+<!-- <select ng-model="courseName" ng-options="par.courseName for courseName in pars"></select> -->
 
 <div class="container">
    <div class="row">
       <div ng-if="pars" class="col-md-12 scorecard">
          <score-card ng-if="pars" tees="courses" scores="scores" pars="pars"></score-card>
-         <button ng-if="pars" ng-click="submitScores()">Submit Score</button>
+         <a ng-href="/handicap"><button ng-if="pars" ng-click="submitScores()">Submit Score</button></a>
       </div>
    </div>
 </div>

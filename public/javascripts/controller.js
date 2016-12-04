@@ -30,6 +30,7 @@ app.controller('controller', function($scope, $http, $location) {
 $scope.getTees = function(){
    $http.get("/api/" + $scope.course_id)
    .then(function (data){
+      console.log(data)
       $scope.courses = data.data.slice(0,4)
       $scope.pars = data.data[4]
       $scope.scores = {}
@@ -43,12 +44,13 @@ $scope.submitScores = function(){
    $scope.submitScores = $scope.submitScores ? false : true;
    }
 
+
 });
+
 
 app.controller('handicapController', function($scope, $http, $location){
    $http.get('/api/handicap')
    .then(function(data){
-     console.log(data)
      $scope.handicap = data.data
    })
    $scope.totalScore = function(x){
@@ -127,15 +129,18 @@ app.directive("playerScore", function () {
                           parseFloat(scores.score5 || 0) + parseFloat(scores.score6 || 0) + parseFloat(scores.score7 || 0) + parseFloat(scores.score8 || 0) + parseFloat(scores.score9 || 0);
              return front9score || 0;
           };
-      $scope.back9scores = function() {
+          $scope.back9scores = function() {
              var back9score = parseFloat(scores.score10 || 0) + parseFloat(scores.score11 || 0) +
                           parseFloat(scores.score12 || 0) + parseFloat(scores.score13 || 0) +
                           parseFloat(scores.score14 || 0) + parseFloat(scores.score15 || 0) + parseFloat(scores.score16 || 0) + parseFloat(scores.score17 || 0) + parseFloat(scores.score18 || 0);
              return back9score || 0;
           };
-      $scope.totalScore = function(){
-         return $scope.front9scores() + $scope.back9scores()
-      }
+          $scope.totalScore = function(){
+             return $scope.front9scores() + $scope.back9scores()
+         };
+         $scope.hcap = function(){
+            return ($scope.totalScore() - 72)
+         };
    },
     restrict: "A"
   }

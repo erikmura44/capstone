@@ -1,61 +1,67 @@
-
+<!--
 {{gameData[0]}}
-<hr>
+<hr> -->
 
-<table class="table-bordered">
-   <thead>
-      <tr>
-         <td>Date</td>
-         <td>Course</td>
-         <td>Location</td>
-         <td>Hole 1</td>
-         <td>Hole 2</td>
-         <td>Hole 3</td>
-         <td>Hole 4</td>
-         <td>Hole 5</td>
-         <td>Hole 6</td>
-         <td>Hole 7</td>
-         <td>Hole 8</td>
-         <td>Hole 9</td>
-         <td>Hole 10</td>
-         <td>Hole 11</td>
-         <td>Hole 12</td>
-         <td>Hole 13</td>
-         <td>Hole 14</td>
-         <td>Hole 15</td>
-         <td>Hole 16</td>
-         <td>Hole 17</td>
-         <td>Hole 18</td>
-         <td>Total Score</td>
-      </tr>
-   </thead>
-  <tr ng-repeat="x in gameData[0]">
-    <td>{{ x.date }}</td>
-    <td>{{ x.courseName }}</td>
-    <td>{{ x.location }}</td>
-    <td>{{ x.score1 }}</td>
-    <td>{{ x.score2 }}</td>
-    <td>{{ x.score3 }}</td>
-    <td>{{ x.score4 }}</td>
-    <td>{{ x.score5 }}</td>
-    <td>{{ x.score6 }}</td>
-    <td>{{ x.score7 }}</td>
-    <td>{{ x.score8 }}</td>
-    <td>{{ x.score9 }}</td>
-    <td>{{ x.score10 }}</td>
-    <td>{{ x.score11 }}</td>
-    <td>{{ x.score12 }}</td>
-    <td>{{ x.score13 }}</td>
-    <td>{{ x.score14 }}</td>
-    <td>{{ x.score15 }}</td>
-    <td>{{ x.score16 }}</td>
-    <td>{{ x.score17 }}</td>
-    <td>{{ x.score18 }}</td>
-    <td>{{ totalScore(x) }}</td>
-  </tr>
-</table>
+<label>Search: <input ng-model="searchText" class="leaderBoardSearch"></label>
 
-
-
-<hr>
-{{handicap[0].rows[0].handicap | number:1}}
+<div class="container">
+   <div class="row">
+      <div class="scoreboardHeader">Current Handicap: {{handicap[0].rows[0].handicap | number:1}}</div>
+   </div>
+   <div class="row leaderBoard">
+      <table class="table-bordered scoresTable">
+         <thead>
+            <tr>
+               <td>Date</td>
+               <td>Course</td>
+               <td>Location</td>
+               <td>Hole 1</td>
+               <td>Hole 2</td>
+               <td>Hole 3</td>
+               <td>Hole 4</td>
+               <td>Hole 5</td>
+               <td>Hole 6</td>
+               <td>Hole 7</td>
+               <td>Hole 8</td>
+               <td>Hole 9</td>
+               <td>Hole 10</td>
+               <td>Hole 11</td>
+               <td>Hole 12</td>
+               <td>Hole 13</td>
+               <td>Hole 14</td>
+               <td>Hole 15</td>
+               <td>Hole 16</td>
+               <td>Hole 17</td>
+               <td>Hole 18</td>
+               <td>Total Score</td>
+               <td>Handicap Per Round</td>
+            </tr>
+         </thead>
+        <tr ng-repeat="x in gameData[0] | filter:searchText">
+          <td>{{ x.date }}</td>
+          <td>{{ x.courseName }}</td>
+          <td>{{ x.location }}</td>
+          <td>{{ x.score1 }}</td>
+          <td>{{ x.score2 }}</td>
+          <td>{{ x.score3 }}</td>
+          <td>{{ x.score4 }}</td>
+          <td>{{ x.score5 }}</td>
+          <td>{{ x.score6 }}</td>
+          <td>{{ x.score7 }}</td>
+          <td>{{ x.score8 }}</td>
+          <td>{{ x.score9 }}</td>
+          <td>{{ x.score10 }}</td>
+          <td>{{ x.score11 }}</td>
+          <td>{{ x.score12 }}</td>
+          <td>{{ x.score13 }}</td>
+          <td>{{ x.score14 }}</td>
+          <td>{{ x.score15 }}</td>
+          <td>{{ x.score16 }}</td>
+          <td>{{ x.score17 }}</td>
+          <td>{{ x.score18 }}</td>
+          <td>{{ totalScore(x) }}</td>
+          <td>{{ x.handicap }}<td>
+        </tr>
+      </table>
+</div>
+</div>
