@@ -46,6 +46,10 @@ function handicap (game){
    return knex.raw(`SELECT AVG((score1 + score2 + score3 + score4 + score5 + score6 + score7 + score8 + score9 + score10 + score11 + score12 + score13 + score14 + score15 + score16 + score17 + score18) - 72) AS handicap FROM games`)
 }
 
+function getCourses (){
+   return knex('courses')
+}
+
 module.exports = {
   getPlayer: getPlayer,
   getBlackTees: getBlackTees,
@@ -55,5 +59,6 @@ module.exports = {
   getPar: getPar,
   sendScoresToDB: sendScoresToDB,
   gameData: gameData,
-  handicap: handicap
+  handicap: handicap,
+  getCourses: getCourses
 }
