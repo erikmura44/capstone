@@ -4,6 +4,13 @@ var queries = require('../database/queries.js');
 
 /* GET home page. */
 
+router.get('/courses', function(req, res, next){
+   queries.getCourses()
+   .then(function(courses){
+      res.json(courses)
+   })
+})
+
 router.get('/gameData', function(req, res, next){
    Promise.all(
       [
@@ -60,6 +67,8 @@ router.post('/postscores', function(req, res, next){
       res.sendStatus(200)
    })
 })
+
+
 
 
 
