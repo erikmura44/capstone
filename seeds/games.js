@@ -26,7 +26,6 @@ exports.seed = function(knex, Promise) {
            score16: 3,
            score17: 4,
            score18: 4,
-           handicap: 1,
         }),
         knex('games').insert({
            course_id: '3',
@@ -49,7 +48,6 @@ exports.seed = function(knex, Promise) {
            score16: 4,
            score17: 4,
            score18: 4,
-           handicap: 3,
         }),
         knex('games').insert({
            course_id: '5',
@@ -72,7 +70,6 @@ exports.seed = function(knex, Promise) {
            score16: 4,
            score17: 4,
            score18: 4,
-           handicap: 6,
         }),
         knex('games').insert({
            course_id: '8',
@@ -95,7 +92,6 @@ exports.seed = function(knex, Promise) {
            score16: 4,
            score17: 4,
            score18: 4,
-           handicap: 8,
         }),
       ]);
     });
