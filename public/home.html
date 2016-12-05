@@ -1,13 +1,15 @@
-<input ng-model="course_id" class="courseInput"><br>
-<button ng-click="getTees()">Load Course</button>
 
-<!-- <select ng-model="courseName" ng-options="par.courseName for courseName in pars"></select> -->
+<select ng-model="course" ng-change="getTees()" ng-options="course.courseName for course in courseNames">
+   <option value='' disabled>- Please Choose A Course -</option>
+</select>
 
 <div class="container">
    <div class="row">
       <div ng-if="pars" class="col-md-12 scorecard">
+         <h3 class="scorecardCourse">{{pars.courseName}}</h3>
          <score-card ng-if="pars" tees="courses" scores="scores" pars="pars"></score-card>
          <a ng-href="/handicap"><button ng-if="pars" ng-click="submitScores()">Submit Score</button></a>
+         <h5 class="scorecardLocation">{{pars.location}}</h5>
       </div>
    </div>
 </div>

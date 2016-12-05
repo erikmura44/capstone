@@ -16,21 +16,20 @@ app.controller('controller', function($scope, $http, $location) {
    $scope.ShowHide4manBB = function () {
        $scope.show4manBB = $scope.show4manBB ? false : true;
    }
-   $scope.ShowHideMP= function () {
+   $scope.ShowHideMP = function () {
        $scope.showMP = $scope.showMP ? false : true;
    }
-   $scope.ShowHideSkins= function () {
+   $scope.ShowHideSkins = function () {
        $scope.showSkins = $scope.showSkins ? false : true;
    }
-   $scope.ShowHideScramble= function () {
+   $scope.ShowHideScramble = function () {
        $scope.showScramble = $scope.showScramble ? false : true;
    }
 
 
 $scope.getTees = function(){
-   $http.get("/api/" + $scope.course_id)
+   $http.get("/api/" + $scope.course.id)
    .then(function (data){
-      console.log(data)
       $scope.courses = data.data.slice(0,4)
       $scope.pars = data.data[4]
       $scope.scores = {}
@@ -40,9 +39,14 @@ $scope.getTees = function(){
    })
 }
 $scope.submitScores = function(){
-   $http.post('/api/postscores', Object.assign({}, {course_id:$scope.course_id}, $scope.scores))
+   $http.post('/api/postscores', Object.assign({}, {course_id:$scope.course.id}, $scope.scores))
    $scope.submitScores = $scope.submitScores ? false : true;
    }
+
+$http.get("/api/courses")
+.then(function(data){
+   $scope.courseNames = data.data
+})
 
 
 });
@@ -59,10 +63,60 @@ app.controller('handicapController', function($scope, $http, $location){
 
    $http.get('/api/gameData')
    .then(function(data){
-     console.log(data)
+     console.log(data.data)
      $scope.gameData = data.data
-   })
-})
+  })
+
+/* Start of Chart JS */
+
+  var canvas = document.getElementById('myChart');
+
+  var chartdata = {
+      labels: ["11/18/16", "11/21/16", "11/26/16", "12/1/15", "12/2/16", "12/3/16", "12/4/16", "12/5/16" ],
+      datasets: [
+          {
+             label: "Handicap",
+             fill: false,
+             lineTension: 0.1,
+             backgroundColor: "rgba(#4bc1c1, 0.4)",
+             borderColor: "#4bc1c1",
+             borderCapStyle: 'butt',
+             borderDash: [],
+             borderDashOffset: 0.0,
+             borderJoinStyle: 'miter',
+             pointBorderColor: "#4bc1c1",
+             pointBackgroundColor: "#fff",
+             pointBorderWidth: 1,
+             pointHoverRadius: 5,
+             pointHoverBackgroundColor: "#4bc1c1",
+             pointHoverBorderColor: "#dddddd",
+             pointHoverBorderWidth: 2,
+             pointRadius: 5,
+             pointHitRadius: 10,
+             data: [73, 78, 75, 80, 76, 76, 99, 83],
+          }
+      ]
+  };
+
+  var option = {
+   showLines: true,
+   scales: {
+      yAxes: [{
+        ticks: {
+            min: 60
+        }
+      }]
+   }
+  };
+  var myLineChart = Chart.Line(canvas,{
+   data:chartdata,
+   options:option
+  });
+
+/* End of ChartJS */
+
+
+}); /* End of Handicap Controller */
 
 app.directive("scoreCardTee", function () {
    return {

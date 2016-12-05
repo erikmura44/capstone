@@ -2,6 +2,9 @@ angular.module('golfapp', ['ngRoute'])
 .config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
+      templateUrl: '/landing.html'
+   })
+    .when('/golf', {
       templateUrl: '/home.html',
       controller: 'controller'
    })

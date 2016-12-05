@@ -1,12 +1,11 @@
-<!--
-{{gameData[0]}}
-<hr> -->
-
 <label>Search: <input ng-model="searchText" class="leaderBoardSearch"></label>
 
 <div class="container">
    <div class="row">
       <div class="scoreboardHeader">Current Handicap: {{handicap[0].rows[0].handicap | number:1}}</div>
+   </div>
+   <div class="row">
+      <canvas id="myChart"></canvas>
    </div>
    <div class="row leaderBoard">
       <table class="table-bordered scoresTable">
@@ -34,7 +33,6 @@
                <td>Hole 17</td>
                <td>Hole 18</td>
                <td>Total Score</td>
-               <td>Handicap Per Round</td>
             </tr>
          </thead>
         <tr ng-repeat="x in gameData[0] | filter:searchText">
@@ -60,7 +58,6 @@
           <td>{{ x.score17 }}</td>
           <td>{{ x.score18 }}</td>
           <td>{{ totalScore(x) }}</td>
-          <td>{{ x.handicap }}<td>
         </tr>
       </table>
 </div>

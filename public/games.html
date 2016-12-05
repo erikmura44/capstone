@@ -2,7 +2,7 @@
    <div class="row">
       <div class="col-md-12">
          <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                <div class="card">
                  <div class="card-block" >
                    <h4 class="card-title">Bingo, Bango, Bongo</h4>
@@ -18,7 +18,7 @@
                  </div>
                </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                <div class="card">
                   <div class="card">
                    <div class="card-block">
@@ -35,7 +35,9 @@
                  </div>
                </div>
             </div>
-            <div class="col-md-4">
+         </div>
+         <div class="row">
+            <div class="col-md-6">
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Four Man Best Ball</h4>
@@ -50,9 +52,7 @@
                  </div>
                </div>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Match Play</h4>
@@ -67,7 +67,9 @@
                  </div>
                </div>
             </div>
-            <div class="col-md-4">
+         </div>
+         <div class="row">
+            <div class="col-md-6">
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Skins</h4>
@@ -80,15 +82,15 @@
                       <li>Handicap indexes are not considered in skins.</li>
                       <li>Total the number of skins, if the value of each hole is the same, or total up the number of points. The winner is the player with the most skins or points</li>
                    </ul>
-                   <button ng-click="ShowSkins()">Rules</button>
+                   <button ng-click="ShowHideSkins()">Rules</button>
                  </div>
                </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Scramble</h4>
-                   <p class="card-text">Each player hits a tee shot on each hole, but everyone plays from the spot of the best shot, subject to certain criteria. Rules for playing in a scramble are informal, with tournament organizers modifying basic rules as they wish. For example, organizers may require a group to select each player’s tee shot at least twice. 
+                   <p class="card-text">Each player hits a tee shot on each hole, but everyone plays from the spot of the best shot, subject to certain criteria. Rules for playing in a scramble are informal, with tournament organizers modifying basic rules as they wish. For example, organizers may require a group to select each player’s tee shot at least twice.
                    </p>
                    <ul ng-show="showScramble">
                       <li>Each member of the team tees off from the starting hole. In a scramble tournament, the team’s opening hole could be any hole on an 18-hole course, depending on the assignment by tournament organizers. Players can tee off with the golf club of their choosing—not necessarily a driver.</li>
@@ -96,7 +98,7 @@
                       <li>The spot of the best tee shot is marked with a golf tee or ball marker. Players must pick up their golf balls and hit from within one club length of the newly marked spot.</li>
                       <li>Team members continue selecting the best shot until one player hits the ball in the hole. The team score is the total of the best shots.</li>
                    </ul>
-                   <button ng-click="ShowScramble()">Rules</button>
+                   <button ng-click="ShowHideScramble()">Rules</button>
                  </div>
                </div>
             </div>

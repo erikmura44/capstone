@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
 .black {
    background-color: black;
    color: white;
@@ -34,9 +36,9 @@ input {
 }
 .scorecard {
    border: 2px solid rgb(144, 135, 115);
-   border-radius: 5px;
+   border-radius: 40px;
    background-color: #ded6cb;
-   padding: 20px;
+   padding: 10px;
 }
 .scores {
    background-color: white;
@@ -51,6 +53,7 @@ btn-primary {
    background-color: white;
    border: none;
    height: 75px;
+   z-index: 1 !important;
 }
 @media (min-width: 768px) {
    .navbar-nav>li>a {
@@ -88,46 +91,44 @@ td {
 .leaderBoardSearch {
    width: 200px;
 }
-
-
-/*
-* {
-    padding: 0;
-    margin: 0;
+.scorecardCourse {
+   text-align: center !important;
+   margin-top: 10px !important;
+   font-family: 'Satisfy', cursive;
+   font-size: 40px !important;
+}
+.scorecardLocation {
+   text-align: right !important;
+   display: inline-block;
+   float: right;
+}
+canvas#myChart {
+   width: 100% !important;
+   height: 350px !important;
 }
 
-html , body {
-    width: 100%;
-    height: 100%:
-    overflow: hidden;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-}
 
-html {
-    background-color: rgba(237,248,252,1);
-}*/
+
+
 
 #letter {
-    font-size: 120px;
+    font-size: 80px;
     font-family: Helvetica;
     font-weight: Bold;
-    color: rgba(18,22,26,0.7);
-    width: 120px;
+    color: rgba(18,22,26,0.8);
+    width: 600px;
     height: 120px;
     text-align: center;
     vertical-align: middle;
     line-height: 120px;
     position: fixed;
-    top: 50%;
-    left: 25%;
+    top: 25%;
+    left: 15%;
     margin-top: -60px;
     margin-left: -60px;
     opacity: 1;
     z-index: 15;
 }
-
 #description {
     position: fixed;
     bottom: 10px;
@@ -135,12 +136,11 @@ html {
     z-index: 100;
     font-family: Helvetica;
     font-weight: 200;
-    color: rgba(18,22,26,0.7);
+    color: rgba(18,22,26,0.9);
     text-align: center;
-    font-size: 11px;
+    font-size: 30px;
     letter-spacing: 1px;
 }
-
 #animation {
     position: fixed;
     width: 100%;
@@ -148,17 +148,15 @@ html {
     top: 0%;
     left: 0%;
 }
-
 .ground {
     width: 100%;
     height: 50%;
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: rgba(220,240,220,1);
+    background-color: #548e54;
     opacity: 0.6;
 }
-
 .ground .hill {
     width: 1000px;
     height: 1000px;
@@ -171,35 +169,31 @@ html {
     transform: translate( -500px , 0px );
     background-color: inherit;
 }
-
 .ground .hill:nth-of-type(1){
     left: 60%;
     top: -30px;
 }
-
 .ground .hill:nth-of-type(2){
     left: 40%;
     top: -50px;
 }
-
 .ground .hill:nth-of-type(3){
     left: 85%;
     top: -75px;
 }
-
 .ground .hill:nth-of-type(4){
     left: 10%;
     top: -25px;
 }
-
 .green {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 700px;
     height: 500px;
-    background-color: rgba(239,248,241,1);
+    background-color: #f0f9f2;
     border-radius: 500px;
+    border: 1px solid #c7cfc9;
     -webkit-transform: scale( 1 , 0.25 );
     -moz-transform: scale( 1 , 0.25 );
     -ms-transform: scale( 1 , 0.25 );
@@ -209,7 +203,23 @@ html {
     margin-top: -130px;
     opacity: 0.6
 }
-
+.bunker {
+    position: absolute;
+    left: -15%;
+    top: 80%;
+    width: 700px;
+    height: 500px;
+    background-color: #C2B280;
+    border-radius: 500px;
+    border: 15px solid #716748;
+    -webkit-transform: scale( 1 , 0.25 );
+    -moz-transform: scale( 1 , 0.25 );
+    -ms-transform: scale( 1 , 0.25 );
+    -o-transform: scale( 1 , 0.25 );
+    transform: scale( 1 , 0.25 );
+    margin-left: -200px;
+    margin-top: -130px;
+}
 .hole {
     -webkit-transform: scale( 1 , 0.25 );
     -moz-transform: scale( 1 , 0.25 );
@@ -226,7 +236,6 @@ html {
     margin-left: 150px;
     margin-top: 110px;
 }
-
 .pole {
     width: 5px;
     height: 837px;
@@ -235,6 +244,7 @@ html {
     top: 50%;
     left: 50%;
     border-radius: 100px;
+    border: 1px solid #ececec;
     margin-top: -400px;
     margin-left: 158px;
     -webkit-transform: scale( 1 , 0.25 );
@@ -244,7 +254,6 @@ html {
     transform: scale( 1 , 0.25 );
     z-index: 8;
 }
-
 .flag {
     border-right: 28px solid rgba(255,114,93,1);
     border-top: 10px solid transparent;
@@ -261,40 +270,36 @@ html {
     animation: flag 2s cubic-bezier(.37,0,.7,.99) 0s infinite alternate none;
 	-webkit-animation: flag 2s cubic-bezier(.37,0,.7,.99) 0s infinite alternate none;
 }
-
 .ball , .ball div {
-    position: absolute;
+    position: fixed;
     width: 9px;
     height: 9px;
     overflow: hidden;
     border-radius: 13px;
     z-index: 3;
 }
-
 .ball {
     top: 0%;
     left: 0%;
     animation: ballPos 6s linear 0s infinite normal none;
 	-webkit-animation: ballPos 6s linear 0s infinite normal none;
 }
-
 .ball div {
     background-color: #fff;
     box-shadow: inset 0px -2px 2px rgba(195,195,195,0.7);
     animation: ballDrop 6s ease-in 0s infinite normal none;
 	-webkit-animation: ballDrop 6s ease-in 0s infinite normal none;
 }
-
 .shot {
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     margin-top: 2px;
     margin-left: 2px;
+    background-color: #edf8fc;
 }
-
 .shadow {
     z-index: 1;
     -webkit-transform: scale( 1 , 0.25 ) translate( 0px , 16px);
@@ -310,7 +315,6 @@ transform: scale( 1 , 0.25 ) translate( 0px , 16px);
     animation: ballShadow 6s linear 0s infinite normal none;
 	-webkit-animation: ballShadow 6s linear 0s infinite normal none;
 }
-
 @keyframes flag {
 	22% { -webkit-transform: skew( 0deg , 4deg ); -moz-transform: skew( 0deg , 4deg ); -ms-transform: skew( 0deg , 4deg ); -o-transform: skew( 0deg , 4deg ); transform: skew( 0deg , 4deg );}
 	100% { -webkit-transform: skew( 0deg , -4deg ); -moz-transform: skew( 0deg , -4deg ); -ms-transform: skew( 0deg , -4deg ); -o-transform: skew( 0deg , -4deg ); transform: skew( 0deg , -4deg );}
@@ -318,7 +322,6 @@ transform: scale( 1 , 0.25 ) translate( 0px , 16px);
 	51% { -webkit-transform: skew( 0deg , -12deg ); -moz-transform: skew( 0deg , -12deg ); -ms-transform: skew( 0deg , -12deg ); -o-transform: skew( 0deg , -12deg ); transform: skew( 0deg , -12deg ); }
 	0% { -webkit-transform: skew( 0deg , 11deg ); -moz-transform: skew( 0deg , 11deg ); -ms-transform: skew( 0deg , 11deg ); -o-transform: skew( 0deg , 11deg ); transform: skew( 0deg , 11deg );}
 }
-
 @-webkit-keyframes flag {
 	22% { -webkit-transform: skew( 0deg , 4deg ); -moz-transform: skew( 0deg , 4deg ); -ms-transform: skew( 0deg , 4deg ); -o-transform: skew( 0deg , 4deg ); transform: skew( 0deg , 4deg );}
 	100% { -webkit-transform: skew( 0deg , -4deg ); -moz-transform: skew( 0deg , -4deg ); -ms-transform: skew( 0deg , -4deg ); -o-transform: skew( 0deg , -4deg ); transform: skew( 0deg , -4deg );}
@@ -326,7 +329,6 @@ transform: scale( 1 , 0.25 ) translate( 0px , 16px);
 	51% { -webkit-transform: skew( 0deg , -12deg ); -moz-transform: skew( 0deg , -12deg ); -ms-transform: skew( 0deg , -12deg ); -o-transform: skew( 0deg , -12deg ); transform: skew( 0deg , -12deg ); }
 	0% { -webkit-transform: skew( 0deg , 11deg ); -moz-transform: skew( 0deg , 11deg ); -ms-transform: skew( 0deg , 11deg ); -o-transform: skew( 0deg , 11deg ); transform: skew( 0deg , 11deg );}
 }
-
 @keyframes ballPos {
 	46% { left: 50%; margin-left: 148px; margin-top: 110px; top: 50%;}
 	47% { }
@@ -348,7 +350,6 @@ transform: scale( 1 , 0.25 ) translate( 0px , 16px);
 	16% { left: 50%; margin-left: -130px; margin-top: 0px; top: -13px;}
 	0% { top: -13px; margin-left: 0px; margin-top: 0px; left: -20px;}
 }
-
 @-webkit-keyframes ballPos {
 	46% { left: 50%; margin-left: 148px; margin-top: 110px; top: 50%;}
 	47% { }
@@ -370,7 +371,6 @@ transform: scale( 1 , 0.25 ) translate( 0px , 16px);
 	16% { left: 50%; margin-left: -130px; margin-top: 0px; top: -13px;}
 	0% { top: -13px; margin-left: 0px; margin-top: 0px; left: -20px;}
 }
-
 @keyframes ballShadow {
 	46% { left: 50%; margin-left: 148px; margin-top: 110px; top: 50%; opacity: 1;}
 	47% { }
@@ -392,7 +392,6 @@ transform: scale( 1 , 0.25 ) translate( 0px , 16px);
 	16% { left: 50%; margin-left: -130px; top: 50%; margin-top: 110px; opacity: 1;}
 	0% { top: 50%; margin-top: 110px; margin-left: 0px; left: -20px; opacity: 1;}
 }
-
 @-webkit-keyframes ballShadow {
 	46% { left: 50%; margin-left: 148px; margin-top: 110px; top: 50%; opacity: 1;}
 	47% { }
@@ -414,14 +413,12 @@ transform: scale( 1 , 0.25 ) translate( 0px , 16px);
 	16% { left: 50%; margin-left: -130px; top: 50%; margin-top: 110px; opacity: 1;}
 	0% { top: 50%; margin-top: 110px; margin-left: 0px; left: -20px; opacity: 1;}
 }
-
 @keyframes ballDrop {
 	46% { margin-top: 0px;}
 	47% { margin-top: 9px;}
 	100% { margin-top: 9px;}
 	0% { margin-top: 0px;}
 }
-
 @-webkit-keyframes ballDrop {
 	46% { margin-top: 0px;}
 	47% { margin-top: 9px;}
