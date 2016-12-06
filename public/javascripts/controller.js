@@ -8,22 +8,52 @@ app.controller('controller', function($scope, $http, $location) {
    $scope.showSkins = false;
    $scope.showScramble = false;
    $scope.ShowHideBBB = function () {
-       $scope.showBBB = $scope.showBBB ? false : true;
+       $scope.showBBB = !$scope.showBBB;
+       $scope.show4ball = false;
+       $scope.show4manBB = false;
+       $scope.showMP = false;
+       $scope.showSkins = false;
+       $scope.showScramble = false;
    }
    $scope.ShowHide4ball = function () {
-       $scope.show4ball = $scope.show4ball ? false : true;
+      $scope.show4ball = !$scope.show4ball;
+      $scope.showBBB = false;
+      $scope.show4manBB = false;
+      $scope.showMP = false;
+      $scope.showSkins = false;
+      $scope.showScramble = false;
    }
    $scope.ShowHide4manBB = function () {
-       $scope.show4manBB = $scope.show4manBB ? false : true;
+       $scope.show4manBB = !$scope.show4manBB;
+       $scope.show4ball = false;
+       $scope.showBBB = false;
+       $scope.showMP = false;
+       $scope.showSkins = false;
+       $scope.showScramble = false;
    }
    $scope.ShowHideMP = function () {
-       $scope.showMP = $scope.showMP ? false : true;
+       $scope.showMP = !$scope.showMP;
+       $scope.show4ball = false;
+       $scope.show4manBB = false;
+       $scope.showBBB = false;
+       $scope.showSkins = false;
+       $scope.showScramble = false;
    }
    $scope.ShowHideSkins = function () {
-       $scope.showSkins = $scope.showSkins ? false : true;
+       $scope.showSkins = !$scope.showSkins;
+       $scope.show4ball = false;
+       $scope.show4manBB = false;
+       $scope.showMP = false;
+       $scope.showBBB = false;
+       $scope.showScramble = false;
    }
    $scope.ShowHideScramble = function () {
-       $scope.showScramble = $scope.showScramble ? false : true;
+       $scope.showScramble = !$scope.showScramble;
+       $scope.show4ball = false;
+       $scope.show4manBB = false;
+       $scope.showMP = false;
+       $scope.showSkins = false;
+       $scope.showBBB = false;
    }
 
    $scope.getTees = function(){

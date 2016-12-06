@@ -50,11 +50,38 @@ input {
    background-color: white;
    font-family: 'Trirong', serif !important;
 }
+.card {
+   background-color: #e6e6e6 !important;
+   opacity: 0.9 !important;
+   color: black;
+}
 .card-title {
    text-align: center;
    font-family: 'Trirong', serif !important;
+   color: white;
+   font-size: 40px;
+   padding: 20px 10px 0 0;
+   text-align: right !important;
+   justify-content: center !important;
+   align-content: : center !important;
+   flex-direction: column !important;
 }
 .card-text {
+   font-family: 'Trirong', serif !important;
+   background-color: white !important;
+   padding: 10px 30px 10px 30px;
+}
+.card-block {
+   background-image:url('/images/golfbanner.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin-bottom: 20px;
+}
+.card-block-hidden {
+   background-color: white;
+}
+.headline {
+   text-align: center;
    font-family: 'Trirong', serif !important;
 }
 btn-primary {
@@ -129,11 +156,6 @@ select.courseSelect {
 }
 select > option {
    text-align: center !important;
-}
-.card {
-   background-color: #e6e6e6 !important;
-   opacity: 0.9 !important;
-   color: black;
 }
 label {
    font-family: 'Trirong', serif !important;
