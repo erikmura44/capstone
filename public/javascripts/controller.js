@@ -26,27 +26,27 @@ app.controller('controller', function($scope, $http, $location) {
        $scope.showScramble = $scope.showScramble ? false : true;
    }
 
-
-$scope.getTees = function(){
-   $http.get("/api/" + $scope.course.id)
-   .then(function (data){
-      $scope.courses = data.data.slice(0,4)
-      $scope.pars = data.data[4]
-      $scope.scores = {}
-   })
-   .catch(function(){
-      $scope.courses = []
-   })
-}
-$scope.submitScores = function(){
-   $http.post('/api/postscores', Object.assign({}, {course_id:$scope.course.id}, $scope.scores))
-   $scope.submitScores = $scope.submitScores ? false : true;
+   $scope.getTees = function(){
+      $http.get("/api/" + $scope.course.id)
+      .then(function (data){
+         $scope.courses = data.data.slice(0,4)
+         $scope.pars = data.data[4]
+         $scope.scores = {}
+      })
+      .catch(function(){
+         $scope.courses = []
+      })
    }
 
-$http.get("/api/courses")
-.then(function(data){
-   $scope.courseNames = data.data
-})
+   $scope.submitScores = function(){
+      $http.post('/api/postscores', Object.assign({}, {course_id:$scope.course.id}, $scope.scores))
+      $scope.submitScores = $scope.submitScores ? false : true;
+      }
+
+   $http.get("/api/courses")
+   .then(function(data){
+      $scope.courseNames = data.data
+   })
 
 
 });
@@ -63,57 +63,60 @@ app.controller('handicapController', function($scope, $http, $location){
 
    $http.get('/api/gameData')
    .then(function(data){
-     console.log(data.data)
      $scope.gameData = data.data
-  })
+     var dates = data.data[0].map(function(scores){
+        return moment(scores.date).format("MM DD YYYY")
+     })
+     var scores = data.data[0].map(function(scores){
+        return scores.score1 + scores.score2 + scores.score3 + scores.score4 + scores.score5 + scores.score6 + scores.score7 + scores.score8 + scores.score9 + scores.score10 + scores.score11 + scores.score12 + scores.score13 + scores.score14 + scores.score15 + scores.score16 + scores.score17 + scores.score18
+     })
+     /* Start of Chart JS */
 
-/* Start of Chart JS */
+        var canvas = document.getElementById('myChart');
+        var chartdata = {
+           labels: dates,
+           datasets: [
+              {
+                 label: "Scores",
+                 lineTension: 0.1,
+                 borderColor: "#4bc1c1",
+                 borderCapStyle: 'butt',
+                 borderDash: [],
+                 borderDashOffset: 0.0,
+                 borderJoinStyle: 'miter',
+                 pointBorderColor: "#4bc1c1",
+                 pointBackgroundColor: "#fff",
+                 pointBorderWidth: 1,
+                 pointHoverRadius: 5,
+                 pointHoverBackgroundColor: "#4bc1c1",
+                 pointHoverBorderColor: "#dddddd",
+                 pointHoverBorderWidth: 2,
+                 pointRadius: 5,
+                 pointHitRadius: 10,
+                 data: scores,
+              }
+           ]
+        };
 
-  var canvas = document.getElementById('myChart');
+        var option = {
+           showLines: true,
+           scales: {
+              yAxes: [{
+                 ticks: {
+                    min: 60
+                 }
+              }]
+           }
+        };
+        var myLineChart = Chart.Line(canvas,{
+           data:chartdata,
+           options:option
+        });
 
-  var chartdata = {
-      labels: ["11/18/16", "11/21/16", "11/26/16", "12/1/15", "12/2/16", "12/3/16", "12/4/16", "12/5/16" ],
-      datasets: [
-          {
-             label: "Handicap",
-             fill: false,
-             lineTension: 0.1,
-             backgroundColor: "rgba(#4bc1c1, 0.4)",
-             borderColor: "#4bc1c1",
-             borderCapStyle: 'butt',
-             borderDash: [],
-             borderDashOffset: 0.0,
-             borderJoinStyle: 'miter',
-             pointBorderColor: "#4bc1c1",
-             pointBackgroundColor: "#fff",
-             pointBorderWidth: 1,
-             pointHoverRadius: 5,
-             pointHoverBackgroundColor: "#4bc1c1",
-             pointHoverBorderColor: "#dddddd",
-             pointHoverBorderWidth: 2,
-             pointRadius: 5,
-             pointHitRadius: 10,
-             data: [73, 78, 75, 80, 76, 76, 99, 83],
-          }
-      ]
-  };
+     /* End of ChartJS */
 
-  var option = {
-   showLines: true,
-   scales: {
-      yAxes: [{
-        ticks: {
-            min: 60
-        }
-      }]
-   }
-  };
-  var myLineChart = Chart.Line(canvas,{
-   data:chartdata,
-   options:option
-  });
+   })
 
-/* End of ChartJS */
 
 
 }); /* End of Handicap Controller */
@@ -178,22 +181,31 @@ app.directive("playerScore", function () {
       controller: function($scope){
          var scores = $scope.scores
          $scope.front9scores = function() {
-            var front9score = parseFloat(scores.score1 || 0) + parseFloat(scores.score2 || 0) +
-                      parseFloat(scores.score3 || 0) + parseFloat(scores.score4 || 0) +
-                          parseFloat(scores.score5 || 0) + parseFloat(scores.score6 || 0) + parseFloat(scores.score7 || 0) + parseFloat(scores.score8 || 0) + parseFloat(scores.score9 || 0);
+            var front9score = parseFloat(scores.score1 || 0) +
+                              parseFloat(scores.score2 || 0) +
+                              parseFloat(scores.score3 || 0) +
+                              parseFloat(scores.score4 || 0) +
+                              parseFloat(scores.score5 || 0) +
+                              parseFloat(scores.score6 || 0) +
+                              parseFloat(scores.score7 || 0) +
+                              parseFloat(scores.score8 || 0) +
+                              parseFloat(scores.score9 || 0);
              return front9score || 0;
           };
           $scope.back9scores = function() {
-             var back9score = parseFloat(scores.score10 || 0) + parseFloat(scores.score11 || 0) +
-                          parseFloat(scores.score12 || 0) + parseFloat(scores.score13 || 0) +
-                          parseFloat(scores.score14 || 0) + parseFloat(scores.score15 || 0) + parseFloat(scores.score16 || 0) + parseFloat(scores.score17 || 0) + parseFloat(scores.score18 || 0);
+             var back9score = parseFloat(scores.score10 || 0) +
+                              parseFloat(scores.score11 || 0) +
+                              parseFloat(scores.score12 || 0) +
+                              parseFloat(scores.score13 || 0) +
+                              parseFloat(scores.score14 || 0) +
+                              parseFloat(scores.score15 || 0) +
+                              parseFloat(scores.score16 || 0) +
+                              parseFloat(scores.score17 || 0) +
+                              parseFloat(scores.score18 || 0);
              return back9score || 0;
           };
           $scope.totalScore = function(){
              return $scope.front9scores() + $scope.back9scores()
-         };
-         $scope.hcap = function(){
-            return ($scope.totalScore() - 72)
          };
    },
     restrict: "A"
