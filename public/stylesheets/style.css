@@ -52,7 +52,6 @@ input {
 }
 .card {
    background-color: #e6e6e6 !important;
-   opacity: 0.9 !important;
    color: black;
 }
 .card-title {
@@ -76,6 +75,13 @@ input {
    background-repeat: no-repeat;
    background-size: cover;
    margin-bottom: 20px;
+}
+.card-block:before {
+   background-image:url('/images/golfbanner.png');
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin-bottom: 20px;
+   opacity: 0.5;
 }
 .card-block-hidden {
    background-color: white;
