@@ -1,4 +1,4 @@
-<label>Search: <input ng-model="searchText" class="leaderBoardSearch"></label>
+
 
 <div class="container">
    <div class="row">
@@ -6,6 +6,9 @@
    </div>
    <div class="row">
       <canvas id="myChart"></canvas>
+   </div>
+   <div class="row">
+      <label>Search Your Scores: <input ng-model="searchText" class="leaderBoardSearch"></label>
    </div>
    <div class="row leaderBoard">
       <table class="table-bordered scoresTable">
@@ -36,7 +39,7 @@
             </tr>
          </thead>
         <tr ng-repeat="x in gameData[0] | filter:searchText">
-          <td>{{ x.date }}</td>
+          <td>{{ x.date | amDateFormat: 'ddd, MMM DD YYYY' }}</td>
           <td>{{ x.courseName }}</td>
           <td>{{ x.location }}</td>
           <td>{{ x.score1 }}</td>
@@ -61,4 +64,25 @@
         </tr>
       </table>
 </div>
+</div>
+
+
+<div id="animation">
+    <div class="ground">
+        <div class="hill"></div>
+        <div class="hill"></div>
+        <div class="hill"></div>
+        <div class="hill"></div>
+    </div>
+    <div class="green"></div>
+    <div class="bunker"></div>
+    <div class="hole"></div>
+    <div class="pole"></div>
+    <div class="flag"></div>
+    <div class="shot">
+        <div class="ball">
+           <div></div>
+        </div>
+        <div class="shadow"></div>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-angular.module('golfapp', ['ngRoute'])
+angular.module('golfapp', ['ngRoute', 'angularMoment'])
 .config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {

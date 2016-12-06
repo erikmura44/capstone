@@ -65,7 +65,7 @@ app.controller('handicapController', function($scope, $http, $location){
    .then(function(data){
      $scope.gameData = data.data
      var dates = data.data[0].map(function(scores){
-        return moment(scores.date).format("MM DD YYYY")
+        return moment(scores.date).format("MM/DD/YYYY")
      })
      var scores = data.data[0].map(function(scores){
         return scores.score1 + scores.score2 + scores.score3 + scores.score4 + scores.score5 + scores.score6 + scores.score7 + scores.score8 + scores.score9 + scores.score10 + scores.score11 + scores.score12 + scores.score13 + scores.score14 + scores.score15 + scores.score16 + scores.score17 + scores.score18
@@ -78,8 +78,10 @@ app.controller('handicapController', function($scope, $http, $location){
            datasets: [
               {
                  label: "Scores",
-                 lineTension: 0.1,
-                 borderColor: "#4bc1c1",
+                 fill: true,
+                 backgroundColor: "rgba(75, 193, 193, 0.2)",
+                 lineTension: 0.2,
+                 borderColor: "#f93a3a",
                  borderCapStyle: 'butt',
                  borderDash: [],
                  borderDashOffset: 0.0,

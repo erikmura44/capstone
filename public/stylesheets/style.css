@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url('https://fonts.googleapis.com/css?family=Trirong');
 
+.font {
+   font-family: 'Trirong', serif !important;
+}
 .black {
    background-color: black;
    color: white;
@@ -39,12 +43,19 @@ input {
    border-radius: 40px;
    background-color: #ded6cb;
    padding: 10px;
+   margin-top: 20px;
+   font-family: 'Trirong', serif !important;
 }
 .scores {
    background-color: white;
+   font-family: 'Trirong', serif !important;
 }
 .card-title {
    text-align: center;
+   font-family: 'Trirong', serif !important;
+}
+.card-text {
+   font-family: 'Trirong', serif !important;
 }
 btn-primary {
    text-align: center;
@@ -82,14 +93,21 @@ td {
    font-size: 30px;
    text-align: center;
    vertical-align: middle;
-   border: 1px solid red;
+   font-family: 'Trirong', serif !important;
 }
 .leaderBoard {
    height: 600px;
    overflow: scroll;
+   background-color: #e6e6e6 !important;
+   opacity: 0.9 !important;
+   color: black;
+   font-family: 'Trirong', serif !important;
 }
 .leaderBoardSearch {
    width: 200px;
+   font-family: 'Trirong', serif !important;
+   margin-top: 30px;
+   margin-bottom: 30px;
 }
 .scorecardCourse {
    text-align: center !important;
@@ -104,7 +122,21 @@ td {
 }
 canvas#myChart {
    width: 100% !important;
-   height: 350px !important;
+   height: 450px !important;
+}
+select.courseSelect {
+   width: 100% !important;
+}
+select > option {
+   text-align: center !important;
+}
+.card {
+   background-color: #e6e6e6 !important;
+   opacity: 0.9 !important;
+   color: black;
+}
+label {
+   font-family: 'Trirong', serif !important;
 }
 
 
@@ -147,6 +179,7 @@ canvas#myChart {
     height: 100%;
     top: 0%;
     left: 0%;
+    z-index: -1;
 }
 .ground {
     width: 100%;
