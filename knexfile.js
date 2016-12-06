@@ -3,11 +3,11 @@ require('dotenv').config()
 module.exports = {
 
   development: {
-    client: 'pg',
-    connection: 'postgres://localhost/golf'
+    client: 'postgresql',
+    connection: process.env.DATABASE_URL,
   },
   production: {
-    client: 'pg',
+    client: 'postgresql',
     connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
