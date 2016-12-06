@@ -11,6 +11,13 @@ router.get('/courses', function(req, res, next){
    })
 })
 
+router.post('/postscores', function(req, res, next){
+   queries.sendScoresToDB(req.body)
+   .then(function(games){
+      res.sendStatus(200)
+   })
+})
+
 router.get('/gameData', function(req, res, next){
    Promise.all(
       [
@@ -59,19 +66,5 @@ router.get('/', function(req, res, next){
       ]
    )
 })
-
-
-router.post('/postscores', function(req, res, next){
-   queries.sendScoresToDB(req.body)
-   .then(function(games){
-      res.sendStatus(200)
-   })
-})
-
-
-
-
-
-
 
 module.exports = router;
