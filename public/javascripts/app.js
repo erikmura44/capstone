@@ -17,6 +17,9 @@ angular.module('golfapp', ['ngRoute', 'angularMoment'])
       templateUrl: '/handicap.html',
       controller: 'handicapController'
    })
+    .when('/contact', {
+      templateUrl: '/contact.html'
+   })
     .otherwise({
       redirectTo: '/'
     })
