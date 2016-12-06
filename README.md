@@ -1,6 +1,6 @@
 #Erik Mura g31 Capstone Project
 
-#[Bogie Man](https://bogieman.herokuapp.com/)
+#Working site:[Bogie Man](https://bogieman.herokuapp.com/)
 
-#Tech Used
+###Tech Used
 #### AngularJS | Express | Node.js | PostgreSQL | Chart.js
