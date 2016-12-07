@@ -6,9 +6,19 @@
          </select>
       </div>
       <div ng-if="pars" class="col-md-12 scorecard">
-         <h3 class="scorecardCourse">{{pars.courseName}}</h3>
+         <div class="row">
+            <div class="col-md-4">
+               <img src="images/front9.png" class="holespicture"/>
+            </div>
+            <div class="col-md-4">
+               <h3 class="scorecardCourse">{{pars.courseName}}</h3>
+            </div>
+            <div class="col-md-4">
+               <img src="images/back9.png" class="holespicture"/>
+            </div>
+         </div>
          <score-card ng-if="pars" tees="courses" scores="scores" pars="pars"></score-card>
-         <a ng-href="/handicap"><button ng-if="pars" ng-click="submitScores()">Submit Score</button></a>
+         <a ng-href="/handicap"><button ng-if="pars" ng-click="submitScores()" class="submitButton">Submit Score</button></a>
          <h5 class="scorecardLocation">{{pars.location}}</h5>
       </div>
    </div>
