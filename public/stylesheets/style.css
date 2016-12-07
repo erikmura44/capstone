@@ -69,7 +69,8 @@ input {
    font-family: 'Trirong', serif !important;
    background-color: white !important;
    padding: 10px 30px 10px 30px;
-   font-size:
+   font-size: 18px;
+   border: 1px solid grey;
 }
 .card-block {
    background-image:url('/images/golfbanner.png');
@@ -125,6 +126,7 @@ btn-primary {
 .inputScore {
    border: none;
    width: 40px;
+   text-align: center;
 }
 .inputScore:focus {
    border: none;

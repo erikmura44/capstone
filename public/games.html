@@ -3,18 +3,19 @@
       <div class="col-md-12">
          <div class="row">
             <h1 class="headline">Game On!</h1>
-            <h3 class="headline">Change up your next round of 18 with one of these golf classics</h3>
+            <h3 class="headline">Change up your next round of 18 with one of these golf classics.</h3>
          </div>
          <div class="row">
             <div class="col-md-8 col-md-offset-2">
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Bingo, Bango, Bongo</h4>
-                   <button ng-click="ShowHideBBB()" class="rulesbutton">Rules</button>
+                   <button ng-click="ShowHideBBB()" class="rulesbutton">Play</button>
                 </div>
                 <div class="card-block-hidden">
                    <p class="card-text" ng-show="showBBB">Bingo bango bongo is a golf betting game whereby a point is awarded on each hole for each individual element of the bingo bango bongo. So three separate points are awarded on each hole.
                    </p>
+                   <h3 ng-show="showBBB">Rules</h3>
                    <ul ng-show="showBBB" class="card-text">
                       <li>A bingo is awarded to the player who first gets their ball onto the green.</li>
                       <li>The player whose ball is closest to the pin after each player has played their ball onto the green wins the bango for that hole.</li>
@@ -28,10 +29,11 @@
                <div class="card">
                 <div class="card-block">
                   <h4 class="card-title">4-Ball</h4>
-                  <button ng-click="ShowHide4ball()">Rules</button>
+                  <button ng-click="ShowHide4ball()">Play</button>
                </div>
                <div class="card-block-hidden">
                   <p class="card-text" ng-show="show4ball">Four-ball match play is defined as a match in which two players play their better ball against the better ball of two other players. For this reason, you will also hear the format referred to as “better ball.”</p>
+                  <h3 ng-show="show4ball">Rules</h3>
                   <ul ng-show="show4ball" class="card-text">
                      <li>Four players create two teams of two, and each player plays their own ball</li>
                      <li>After each hole, each teams’ players compare their scores, and the lowest score is counted as the team score.</li>
@@ -45,11 +47,12 @@
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Four Man Best Ball</h4>
-                   <button ng-click="ShowHide4manBB()">Rules</button>
+                   <button ng-click="ShowHide4manBB()">Play</button>
                 </div>
                 <div class="card-block-hidden">
                    <p class="card-text" ng-show="show4manBB">Four-player best ball is a variety of golf in which all four players in a group are working together to achieve the best possible score. Play your own ball, best score from group counts.
                    </p>
+                   <h3 ng-show="show4manBB">Rules</h3>
                    <ul class="card-text" ng-show="show4manBB">
                       <li>Each player tees off and plays the hole in the order of the team’s choosing, with each player completing the hole with their own ball.</li>
                       <li>At the end of the hole, only the best score handed in by any player on the hole is counted as the team’s score.</li>
@@ -62,11 +65,12 @@
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Match Play</h4>
-                   <button ng-click="ShowHideMP()">Rules</button>
+                   <button ng-click="ShowHideMP()">Play</button>
                 </div>
                 <div class="card-block-hidden">
                    <p class="card-text" ng-show="showMP">In match play golf, each hole is like its own small competition, equal to every other hole, making the magnitude of victory irrelevant. Matches are scored by winning a hole, not by cumulative strokes.
                    </p>
+                   <h3 ng-show="showMP">Rules</h3>
                    <ul class="card-text" ng-show="showMP">
                       <li>Scores for strokes in a hole during match play are scored the same as in a round of stroke play, meaning a ball lost in a hazard costs a player the same number of strokes on their score for the hole in both formats.</li>
                       <li>While players are essentially accumulating points, with one point for winning a hole and 1/2 each for a tie, scoring is not looked at as a total of, for example, 3 to 1</li>
@@ -79,11 +83,12 @@
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Skins</h4>
-                   <button ng-click="ShowHideSkins()">Rules</button>
+                   <button ng-click="ShowHideSkins()">Play</button>
                 </div>
                 <div class="card-block-hidden">
                    <p class="card-text" ng-show="showSkins">Each hole is worth a set amount, say $5. The player with the lowest score wins the "skin". In the even that two players tie for the lowest score, there is a carryover, and the next hole is now worth two "skins".
                    </p>
+                   <h3 ng-show="showSkins">Rules</h3>
                    <ul class="card-text" ng-show="showSkins">
                       <li>Assign a skin value to each of the holes.</li>
                       <li>Ask each player to contribute a set amount of money for each hole if the value of the skin is going to be the same for each hole. Or divide the total number of points by four and ask each player to contribute that dollar amount of money for the pot.</li>
@@ -98,11 +103,12 @@
                <div class="card">
                  <div class="card-block">
                    <h4 class="card-title">Scramble</h4>
-                   <button ng-click="ShowHideScramble()">Rules</button>
+                   <button ng-click="ShowHideScramble()">Play</button>
                 </div>
                 <div class="card-block-hidden">
                    <p class="card-text" ng-show="showScramble">All players hit a tee shot on each hole, but everyone plays from the best shot. Rules are informal, with tournament organizers modifying rules as they wish. Example, organizers may require  groups to select each player’s tee shot at least twice.
                    </p>
+                   <h3 ng-show="showScramble">Rules</h3>
                    <ul class="card-text" ng-show="showScramble">
                       <li>Each member of the team tees off from the starting hole. In a scramble tournament, the team’s opening hole could be any hole on an 18-hole course, depending on the assignment by tournament organizers. Players can tee off with the golf club of their choosing—not necessarily a driver.</li>
                       <li>The best tee shot is chosen through general consensus of the scramble team. The group can decide the best tee shot based on any criteria they choose. Usually, the best shot is the longest drive that lands in the fairway, though the team may choose a long tee shot that landed off the fairway in the rough if there is a decent lie.</li>
@@ -119,7 +125,7 @@
 </div>
 
 
-<div id="animation">
+<!-- <div id="animation">
     <div class="ground">
         <div class="hill"></div>
         <div class="hill"></div>
@@ -137,4 +143,4 @@
         </div>
         <div class="shadow"></div>
     </div>
-</div>
+</div> -->

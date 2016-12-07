@@ -108,8 +108,8 @@ app.controller('handicapController', function($scope, $http, $location){
            datasets: [
               {
                  label: "Scores",
-                 fill: true,
-                 backgroundColor: "rgba(75, 193, 193, 0.2)",
+                 fill: false,
+               //   backgroundColor: "rgba(75, 193, 193, 0.2)",
                  lineTension: 0.2,
                  borderColor: "#f93a3a",
                  borderCapStyle: 'butt',
