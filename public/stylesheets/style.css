@@ -105,6 +105,7 @@ btn-primary {
 .contact {
    text-align: center;
    text-decoration: underline;
+   font-family: 'Trirong', serif !important;
 }
 .navbar-default {
    background-color: white;
@@ -185,9 +186,12 @@ label {
    bottom:0;
    right:15;
    padding-left: 10px;
+   font-family: 'Trirong', serif !important;
 }
-
-
+.futureli {
+   font-size: 30px;
+   font-family: 'Trirong', serif !important;
+}
 
 
 
