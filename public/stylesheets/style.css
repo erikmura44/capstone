@@ -180,6 +180,12 @@ select > option {
 label {
    font-family: 'Trirong', serif !important;
 }
+.copy {
+   position:absolute;
+   bottom:0;
+   right:15;
+   padding-left: 10px;
+}
 
 
 
