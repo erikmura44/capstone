@@ -2,7 +2,7 @@
 
 #### A web app for people to keep track of golf handicap and scores
 
-###Working site:[Bogie Man](https://bogieman.herokuapp.com/)
+###Working site: [Bogie Man](https://bogieman.herokuapp.com/)
 
 ### Features
 * Handicap Tracker
